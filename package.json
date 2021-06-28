@@ -26,7 +26,8 @@
     "dev:rn": "npm run build:rn -- --watch",
     "dev:qq": "npm run build:qq -- --watch",
     "dev:jd": "npm run build:jd -- --watch",
-    "dev:quickapp": "npm run build:quickapp -- --watch"
+    "dev:quickapp": "npm run build:quickapp -- --watch",
+    "prod:weapp": "taro build --type weapp NODE_ENV=production"
   },
   "browserslist": [
     "last 3 versions",
@@ -36,24 +37,26 @@
   "author": "",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
+    "@tarojs/cli": "^3.2.13",
     "@tarojs/components": "3.2.13",
+    "@tarojs/react": "3.2.13",
     "@tarojs/runtime": "3.2.13",
     "@tarojs/taro": "3.2.13",
-    "@tarojs/react": "3.2.13",
+    "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "react": "^17.0.0"
+    "react-redux": "^7.2.4"
   },
   "devDependencies": {
-    "@types/webpack-env": "^1.13.6",
-    "@types/react": "^17.0.2",
-    "@tarojs/mini-runner": "3.2.13",
     "@babel/core": "^7.8.0",
+    "@tarojs/mini-runner": "3.2.13",
     "@tarojs/webpack-runner": "3.2.13",
+    "@types/react": "^17.0.2",
+    "@types/webpack-env": "^1.13.6",
     "babel-preset-taro": "3.2.13",
-    "eslint-config-taro": "3.2.13",
     "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.8.2",
+    "eslint-config-taro": "3.2.13",
     "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "stylelint": "9.3.0"
   }

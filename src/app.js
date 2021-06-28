@@ -1,20 +1,28 @@
-import { Component } from 'react'
-import './app.less'
+import { Component } from "react";
+import { Provider } from "react-redux";
+// import { ConnectedRouter } from "connected-react-router";
+import { app } from "@core/app";
+import "./app.less";
 
 class App extends Component {
+  componentDidMount() {}
 
-  componentDidMount () {}
+  componentDidShow() {}
 
-  componentDidShow () {}
+  componentDidHide() {}
 
-  componentDidHide () {}
-
-  componentDidCatchError () {}
+  componentDidCatchError() {}
 
   // this.props.children 是将要会渲染的页面
-  render () {
-    return this.props.children
+  render() {
+    return (
+      <Provider store={app.store}>
+        {/* <ConnectedRouter history={app.browserHistory}> */}
+        {this.props.children}
+        {/* </ConnectedRouter> */}
+      </Provider>
+    );
   }
 }
 
-export default App
+export default App;
