@@ -34,13 +34,14 @@ export class ModuleProxy {
             }
 
             componentDidUpdate(prevProps) {
-                const prevLocation = prevProps.location;
-                const { props } = this;
-                const currentLocation = props.location;
-                const currentRouteParams = props.match ? props.match.params : null;
-                if (currentLocation && currentRouteParams && prevLocation !== currentLocation && lifecycleListener.onRender.isLifecycle) {
-                    app.store.dispatch(actions.onRender(currentRouteParams, currentLocation));
-                }
+                // const prevLocation = prevProps.location;
+                // const { props } = this;
+                // const currentLocation = props.location;
+                // const currentRouteParams = props.match ? props.match.params : null;
+                // console.log("prevLocation currentLocation", prevLocation, currentLocation);
+                // if (currentLocation && currentRouteParams && prevLocation !== currentLocation && lifecycleListener.onRender.isLifecycle) {
+                //     app.store.dispatch(actions.onRender(currentRouteParams, currentLocation));
+                // }
             }
 
             componentWillUnmount() {

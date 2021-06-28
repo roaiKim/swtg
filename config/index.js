@@ -13,6 +13,7 @@ const config = {
   outputRoot: "dist",
   alias: {
     "@core": path.resolve(__dirname, "..", "src/core"),
+    "@img": path.resolve(__dirname, "..", "src/asset/image"),
   },
   plugins: [],
   defineConstants: {},

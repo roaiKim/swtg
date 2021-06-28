@@ -1,0 +1,28 @@
+.ro-index-component{
+    .ro-text-container {
+        height: 320px;
+        position: relative;
+        .text-img-bg {
+            position: absolute;
+            width: 100%;
+            height: 330px;
+        }
+        .ro-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            > text {
+                z-index: 9;
+                width: 100%;
+                padding-left: 300px;
+                &:first-child {
+                    padding-left: 160px;
+                }
+            }
+        }
+    }
+    .item-img {
+        width: 375px;
+        height: 120px;
+    }
+}
