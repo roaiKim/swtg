@@ -1,7 +1,7 @@
 import { Lifecycle, Module, register } from "@core";
 
 const initialState = {
-  name: "test"
+  name: "我的主人"
 };
 
 class UserModule extends Module {

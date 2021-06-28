@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, View } from "@tarojs/components";
+import { Button, View, Image } from "@tarojs/components";
 import { connect } from "react-redux";
 import { actions } from "../module";
 import "./index.less";
@@ -19,10 +19,13 @@ class Main extends React.PureComponent {
     const { userName } = this.props;
     return (
       <View className="ro-module-wrap ro-user-module">
-        Hello {userName}
-        <Button type="primary" onClick={this.onClick}>
+        和平鸽 {userName}
+        <View>
+          <Image className="text-img-bg" mode="widthFix" src={require("@img/place.png")} />
+        </View>
+        {/* <Button type="primary" onClick={this.onClick}>
           change
-        </Button>
+        </Button> */}
       </View>
     );
   }
