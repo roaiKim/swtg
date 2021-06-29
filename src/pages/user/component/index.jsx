@@ -1,5 +1,8 @@
 import React from "react";
-import { Button, View, Image } from "@tarojs/components";
+import { View, Image } from "@tarojs/components";
+import { showLoading } from "@core";
+import { FixButton } from "@components";
+import { autoShowLoading } from "@utils";
 import { connect } from "react-redux";
 import { actions } from "../module";
 import "./index.less";
@@ -11,21 +14,23 @@ class Main extends React.PureComponent {
   }
 
   onClick = () => {
-    console.log(actions);
-    this.props.dispatch(actions.reSet("roaikim"));
+    // console.log(actions);
+    this.props.dispatch(actions.check());
   };
 
   render() {
-    const { userName } = this.props;
+    const { user, autoLoading } = this.props;
+    autoShowLoading(autoLoading);
+
     return (
       <View className="ro-module-wrap ro-user-module">
-        和平鸽 {userName}
+        和平鸽 {user && user.name}
         <View>
           <Image className="text-img-bg" mode="widthFix" src={require("@img/place.png")} />
         </View>
-        {/* <Button type="primary" onClick={this.onClick}>
-          change
-        </Button> */}
+        <FixButton type="primary" onClick={this.onClick}>
+          刷新
+        </FixButton>
       </View>
     );
   }
@@ -33,7 +38,8 @@ class Main extends React.PureComponent {
 
 const mapStateToProps = state => {
   return {
-    userName: state.app.user.name
+    user: state.app.user.user,
+    autoLoading: showLoading(state, "auto")
   };
 };
 

@@ -3,6 +3,28 @@ import Taro from "@tarojs/taro";
 import { View, Text, Button, Image } from "@tarojs/components";
 import "./index.less";
 
+
+const application = [
+  {
+    id: 23,
+    name: "和平鸽",
+    img: "place",
+    description: "在遥远的过去，鸽子曾被人们看成是爱情的使者，当然现在也是。"
+  },
+  {
+    id: 24,
+    name: "时间胶囊",
+    img: "logo_big",
+    description: "你有什么话想对未来的自己说的呢?"
+  },
+  {
+    id: 25,
+    name: "海王",
+    img: "fish",
+    description: "你想成为海王吗? 现在的你可还在新手村哦!"
+  }
+]
+
 export default class Index extends Component {
   componentWillMount() {}
 
@@ -33,15 +55,15 @@ export default class Index extends Component {
         <Text>应用</Text>
         <View className="ro-application-container">
           {
-            [1,2,3,4,5,6,7,8].map(item => (
-              <View key={item} className="ro-application-item" onClick={this.onClick}>
+            application.map(item => (
+              <View key={item.id} className="ro-application-item" onClick={this.onClick}>
                 <View className="ro-application-text">
                   <View className="item-image">
-                    <Image className="text-img-bg" mode="widthFix" src={require("@img/place.png")} />
+                    <Image className="text-img-bg" mode="widthFix" src={require(`@img/${item.img}.png`)} />
                   </View>
-                  <View>和平鸽</View>
+                  <View>{item.name}</View>
                 </View>
-                <View className="item-text-description">在遥远的过去，鸽子曾被人们看成是爱情的使者，当然现在也是。</View>
+                <View className="item-text-description">{item.description}</View>
               </View>
             ))
           }

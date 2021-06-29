@@ -14,6 +14,9 @@ const config = {
   alias: {
     "@core": path.resolve(__dirname, "..", "src/core"),
     "@img": path.resolve(__dirname, "..", "src/asset/image"),
+    "@api": path.resolve(__dirname, "..", "src/service/api"),
+    "@utils": path.resolve(__dirname, "..", "src/utils"),
+    "@components": path.resolve(__dirname, "..", "src/components"),
   },
   plugins: [],
   defineConstants: {},

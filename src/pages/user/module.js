@@ -1,13 +1,25 @@
-import { Lifecycle, Module, register } from "@core";
+import { Lifecycle, Module, register, Loading } from "@core";
+import { UserService } from "@api/UserService";
 
 const initialState = {
-  name: "我的主人"
+  name: "我的主人",
+  user: null
 };
 
 class UserModule extends Module {
   @Lifecycle()
   onRender() {
-    console.log("user module action wawaw");
+    this.check();
+  }
+
+  @Loading("auto")
+  async check() {
+    await UserService.check({}).then((response) => {
+      const data = response.data;
+      this.setState({user: data});
+    }).catch((error) => {
+      console.log("user error", error);
+    });
   }
 
   reSet(name) {
