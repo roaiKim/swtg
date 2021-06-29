@@ -1,4 +1,4 @@
-// import axios, { CancelToken } from "axios";
+import axios, { CancelToken } from "axios";
 // import { message } from "antd";
 import { completePath } from "./config";
 
@@ -24,7 +24,7 @@ axios.interceptors.response.use((response) => {
                 reject(response.data);
             } else {
                 if (response.data && response.data.message) {
-                    message.error(response.data.message);
+                    // message.error(response.data.message);
                 }
                 reject(new Error(response.data.message));
             }
