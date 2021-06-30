@@ -36,6 +36,13 @@ export default class Index extends Component {
 
   componentDidHide() {}
 
+  onPullDownRefresh () {
+    Taro.stopPullDownRefresh()
+    Taro.showToast({
+      title: "fish"
+    });
+  }
+
   onClick = () => {
     Taro.navigateTo({
       url: "/pages/user/index"
@@ -48,8 +55,8 @@ export default class Index extends Component {
         <View className="ro-text-container">
           <Image className="text-img-bg" mode="widthFix" src={require("@img/home_bg.png")} />
           <View className="ro-text">
-            <Text>上维天宫</Text>
-            <Text>满足你的生活乐趣</Text>
+            <Text className="text">上维天宫</Text>
+            <Text className="text">满足你的生活乐趣</Text>
           </View>
         </View>
         <Text>应用</Text>
