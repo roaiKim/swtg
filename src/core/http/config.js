@@ -1,22 +1,10 @@
 
-const http = {
-
-    // dev: "http://119.29.53.45:3200",
+export const baseHostH5 = {
+    dev: "http://119.29.53.45/api/",
     test: "",
     uat: "",
     pro: "",
 };
-
-export function completePath(path, type = "dev") {
-
-    /* if (process.env.NODE_ENV !== "production") {
-        return path;
-    } */
-    if (path && (path.startsWith("http://") || path.startsWith("https://"))) {
-        return path;
-    }
-    return (http[type] || "") + path;
-}
 
 export const baseApi = {
     // 开发版

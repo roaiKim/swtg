@@ -37,10 +37,11 @@ export default class Index extends Component {
   componentDidHide() {}
 
   onPullDownRefresh () {
-    Taro.stopPullDownRefresh()
     Taro.showToast({
-      title: "fish"
+      title: "刷新完成"
     });
+    // 回弹 延迟500ms 解决 h5 不回弹问题
+    this.timer = setTimeout(() => Taro.stopPullDownRefresh(), 500)
   }
 
   onClick = () => {
@@ -51,7 +52,7 @@ export default class Index extends Component {
 
   render() {
     return (
-      <View className="ro-index-component">
+      <View className="ro-page ro-index-component">
         <View className="ro-text-container">
           <Image className="text-img-bg" mode="widthFix" src={require("@img/home_bg.png")} />
           <View className="ro-text">

@@ -1,4 +1,4 @@
 import Main from "./component";
-import { module } from "./module";
+import { moduel } from "./model";
 
-export default module.attachLifecycle(Main);
+export default moduel.attachLifecycle(Main);

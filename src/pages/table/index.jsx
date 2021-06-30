@@ -4,6 +4,7 @@ import { showLoading } from "@core";
 import { FixButton } from "@components";
 import { autoShowLoading } from "@utils";
 import { connect } from "react-redux";
+import { module } from "./module";
 
 class Main extends React.PureComponent {
   constructor(props) {
@@ -16,7 +17,7 @@ class Main extends React.PureComponent {
   };
 
   render() {
-
+    console.log("module", module);
     return (
       <View className="ro-module-wrap ro-user-module">
         和平鸽 

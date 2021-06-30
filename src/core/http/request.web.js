@@ -1,6 +1,6 @@
 import axios, { CancelToken } from "axios";
 // import { message } from "antd";
-import { completePath } from "./config";
+import { baseHostH5 } from "./config";
 
 const httpRequestMap = new Map();
 if (process.env.NODE_ENV === "development") {
@@ -115,12 +115,12 @@ axios.interceptors.response.use((response) => {
  * ajax("GET", "/api/user/check/:userId", {userId: 980}, request, {bail: true}, true)
  *
  */
-export function ajax(method, path, pathParams, request, axiosExtraConfig = {}, cancelPrev = false) {
+export function ajax(method, path, pathParams, request, axiosExtraConfig, cancelPrev = false) {
     const fullUrl = completePath(getURL(path, pathParams));
 
     // bail 用来 判断 当发生错误时 是否自动处理(如弹窗等) authorization
     const authorization = localStorage.getItem("_token") || "";
-    const { headers = {}, ...restConfig } = axiosExtraConfig;
+    const { headers = {}, ...restConfig } = axiosExtraConfig || {};
     const config = {
         headers: {
             Authorization: `Bearer ${authorization}`,
@@ -165,4 +165,15 @@ export function getURL(pattern, params) {
         url = url.replace(`:${name}`, encodedValue);
     });
     return url;
+}
+
+export function completePath(path, type = "dev") {
+
+    /* if (process.env.NODE_ENV !== "production") {
+        return path;
+    } */
+    if (path && (path.startsWith("http://") || path.startsWith("https://"))) {
+        return path;
+    }
+    return (baseHostH5[type] || "") + path;
 }

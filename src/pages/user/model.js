@@ -28,7 +28,7 @@ class UserModule extends Module {
   }
 }
 
-const module = register(new UserModule("user", initialState));
-const actions = module.getActions();
+const moduel = register(new UserModule("user", initialState));
+const actions = moduel.getActions();
 
-export { module, actions };
+export { moduel, actions };

@@ -13,6 +13,7 @@ const contentTypeMap = {
     "FORM": "application/x-www-form-urlencoded"
 }
 
+// 这个是 请求接口的
 export function ajax(method, path, pathParams, request, contentType ,axiosExtraConfig, cancelPrev = false) {
     const url = getURL(path, pathParams);
     const fullUrl = completePath(url);

@@ -4,7 +4,7 @@ import { showLoading } from "@core";
 import { FixButton } from "@components";
 import { autoShowLoading } from "@utils";
 import { connect } from "react-redux";
-import { actions } from "../module";
+import { actions } from "../model";
 import "./index.less";
 
 class Main extends React.PureComponent {
@@ -20,13 +20,16 @@ class Main extends React.PureComponent {
 
   render() {
     const { user, autoLoading } = this.props;
-    autoShowLoading(autoLoading);
+    // autoShowLoading(autoLoading);
 
     return (
       <View className="ro-module-wrap ro-user-module">
         和平鸽 {user && user.name}
         <View>
           <Image className="text-img-bg" mode="widthFix" src={require("@img/place.png")} />
+        </View>
+        <View>
+          <Image className="text-img-bg" mode="widthFix" src="https://public-upsky.oss-cn-shenzhen.aliyuncs.com/WechatIMG15.jpeg" />
         </View>
         <FixButton type="primary" onClick={this.onClick}>
           刷新
