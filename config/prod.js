@@ -4,8 +4,11 @@ module.exports = {
   },
   defineConstants: {
   },
-  mini: {},
+  mini: {
+    esnextModules: ['taro-ui']
+  },
   h5: {
+    esnextModules: ['taro-ui']
     /**
      * 如果h5端编译后体积过大，可以使用webpack-bundle-analyzer插件对打包体积进行分析。
      * 参考代码如下：

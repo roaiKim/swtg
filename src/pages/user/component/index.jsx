@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image } from "@tarojs/components";
 import { showLoading } from "@core";
-import { FixButton, Navbar } from "@components";
+import { FixButton } from "@components";
 import { autoShowLoading } from "@utils";
 import { connect } from "react-redux";
 import { actions } from "../model";
@@ -24,7 +24,7 @@ class Main extends React.PureComponent {
 
     return (
       <View className="ro-module-wrap ro-user-module">
-        <Navbar needBackIcon mainTitle="需求详情" />
+        {/* <Navbar needBackIcon mainTitle="需求详情" /> */}
         和平鸽 {user && user.name}
         <View>
           <Image className="text-img-bg" mode="widthFix" src={require("@img/place.png")} />
