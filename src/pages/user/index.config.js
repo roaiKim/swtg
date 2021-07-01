@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: '和平鸽'
+  navigationBarTitleText: '和平鸽',
+  navigationStyle: 'custom',
 }
