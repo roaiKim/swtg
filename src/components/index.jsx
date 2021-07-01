@@ -1,3 +1,3 @@
 
 export { FixButton } from "./FixButton"
-// export { Navbar } from "./customNavBar"
+export { Navbar } from "./customNavBar"
